@@ -228,11 +228,11 @@ namespace ConfigGenerator.ObjectModel
 
                         var elementScript = element.GenerateFromXml(node, nameSpace);
 
-                        FileSaver.Save(node.Name.CapitalizeFirstLetter() + "Element.cs", elementScript, true);
+                        FileSaver.Save(node.Name.CapitalizeFirstLetter() + "Element.cs", elementScript, false);
 
                     }
 
-                    FileSaver.Save(childNode.Name.CapitalizeFirstLetter() + "Collection.cs", collectionScript, true);
+                    FileSaver.Save(childNode.Name.CapitalizeFirstLetter() + "Collection.cs", collectionScript, false);
                 }
                 else if (childNode.HasChildNodes || IsElement(childNode))
                 {
@@ -241,7 +241,7 @@ namespace ConfigGenerator.ObjectModel
 
                     var elementScript = element.GenerateFromXml(childNode, nameSpace);
 
-                    FileSaver.Save(childNode.Name.CapitalizeFirstLetter() + "Element.cs", elementScript, true);
+                    FileSaver.Save(childNode.Name.CapitalizeFirstLetter() + "Element.cs", elementScript, false);
 
                 }
 
@@ -249,7 +249,7 @@ namespace ConfigGenerator.ObjectModel
 
             var script = Generate();
 
-            FileSaver.Save(xml.Name.CapitalizeFirstLetter() + Type + ".cs", script, true);
+            FileSaver.Save(xml.Name.CapitalizeFirstLetter() + Type + ".cs", script, false);
 
             return script;
 

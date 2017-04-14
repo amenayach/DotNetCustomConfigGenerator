@@ -36,8 +36,12 @@ namespace ConfigGenerator.ObjectModel
   </{0}Group>
 </configuration>", xml.FirstChild.Name, nameSpace, xml.FirstChild.Name.CapitalizeFirstLetter(), xmlString);
 
-            FileSaver.Save("SampleWeb.config.txt", script, true);
+            var filename = "SampleWeb.config.txt";
 
+            FileSaver.Save(filename, script, false);
+
+            FileSaver.BrowsePath(filename);
+            
         }
 
 

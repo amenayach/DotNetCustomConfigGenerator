@@ -46,7 +46,7 @@ namespace ConfigGenerator
                     section.GenerateFromXml(xml.FirstChild, tbNamespace.Text.Trim());
 
                     ConfigSample.Generate(tbNamespace.Text.Trim(), tb.Text);
-
+                    
                 }
 
             }
